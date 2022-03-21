@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:974539912703:android:af5cbf23c5608b6d98a3ca",
+        "mobilesdk_app_id": "1:974539912703:android:0c1b03874dc6908598a3ca",
         "android_client_info": {
           "package_name": "com.akaiyukiusagi.muku"
         }
@@ -31,10 +31,10 @@
               "client_type": 3
             },
             {
-              "client_id": "974539912703-us4inb5t29pddfieh2nhhjnhkgmrm9qa.apps.googleusercontent.com",
+              "client_id": "974539912703-i3q0lnpbkquv6n9k11qmtclkff4os2hf.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.akaiyukiusai.muku"
+                "bundle_id": "com.akaiyukiusagi.muku"
               }
             }
           ]
