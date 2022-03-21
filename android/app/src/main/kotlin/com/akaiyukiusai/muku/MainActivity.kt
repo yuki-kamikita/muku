@@ -1,4 +1,4 @@
-package com.akaiyukiusai.muku.muku
+package com.akaiyukiusai.muku
 
 import io.flutter.embedding.android.FlutterActivity
 
