@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "974539912703",
+    "project_id": "muku-teiki",
+    "storage_bucket": "muku-teiki.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974539912703:android:f2ae79f117f1771c98a3ca",
+        "android_client_info": {
+          "package_name": "com.akaiyukiusai.muku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974539912703-i7kj83jla9kbu5j5run8lr8pmashvjnr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZoR-C8EnrQn0xz-GKXB06R4wSefFoS_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974539912703-i7kj83jla9kbu5j5run8lr8pmashvjnr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
