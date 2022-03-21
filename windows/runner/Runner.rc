@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.akaiyukiusai.muku" "\0"
-            VALUE "FileDescription", "最小限の構成からなるべくプレーンで使い回し可能なOSS定期ゲーを作っていく取り組み" "\0"
+            VALUE "CompanyName", "com.akaiyukiusagi" "\0"
+            VALUE "FileDescription", "muku" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "muku" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 com.akaiyukiusai.muku. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 com.akaiyukiusagi. All rights reserved." "\0"
             VALUE "OriginalFilename", "muku.exe" "\0"
             VALUE "ProductName", "muku" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
