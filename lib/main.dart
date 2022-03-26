@@ -1,12 +1,14 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'pages/home.dart';
+import 'model/firebase/authentication.dart';
+import 'ui/pages/home.dart';
 
 // main関数を非同期にして、Firebaseのinitializeが完了したら画面を描画する
 // initialize完了したら画面再描画、にしたい
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized(); // main関数で非同期にするときに必要？
   await Firebase.initializeApp();
+  Authentication().signInWithAnonymously();  // 匿名ログイン TODO:通常のログインを作るときに再設計
   runApp(const MyApp());
 }
 
