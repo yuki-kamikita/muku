@@ -47,6 +47,14 @@ dependencies:
   firebase_remote_config: ^2.0.2
   firebase_in_app_messaging: ^0.6.0+9
 
+  # Riverpod 状態管理
+  # https://riverpod.dev/docs/getting_started
+  flutter_hooks: ^0.18.0
+  hooks_riverpod: ^1.0.0
+
+  # その他
+  uuid: ^3.0.4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
