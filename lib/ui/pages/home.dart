@@ -15,7 +15,6 @@ class Home extends HookConsumerWidget {
         child: Text('${counter.value}'),
       ),
       floatingActionButton: FloatingActionButton(
-        // readメソッドは、プロバイダーをリッスンせずに読み取るためのユーティリティです。
         onPressed: () => counter.value++,
         child: const Icon(Icons.add),
       ),
