@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:muku/main.dart';
 import 'package:muku/ui/pages/battle_archive.dart';
 import 'package:muku/ui/pages/my_profile.dart';
 import 'package:muku/ui/pages/next_action.dart';
+import 'package:muku/ui/pages/settings/theme_selecter.dart';
 import 'package:muku/ui/pages/user_search.dart';
 
-class BottomNavigation extends HookConsumerWidget {
-  const BottomNavigation({Key? key}) : super(key: key);
+/// ボトムナビゲーションとドロワー
+class Top extends HookConsumerWidget {
+  const Top({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -21,10 +24,8 @@ class BottomNavigation extends HookConsumerWidget {
     ];
 
     return Scaffold(
-      // appBar: AppBar(title: const Text('Muku Project')),
       body: Center(
         child: _pages[_bottomNavigationIndex.value]
-        // child: Text('${_bottomNavigationIndex.value}'),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -48,6 +49,40 @@ class BottomNavigation extends HookConsumerWidget {
         currentIndex: _bottomNavigationIndex.value,
         type: BottomNavigationBarType.fixed,
         onTap: (int index) => _bottomNavigationIndex.value = index
+      ),
+      drawerEdgeDragWidth: MediaQuery.of(context).size.width,
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              child: Text('Muku Project'),
+              // decoration: BoxDecoration(
+              // ),
+            ),
+            ListTile(
+              title: Text("テーマ切り替え"),
+              onTap: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ThemeSelecter()),
+                ),
+              },
+            ),
+            ListTile(
+              title: Text("プライバシーポリシー"),
+              onTap: () => {},
+            ),
+            Divider(),
+            ListTile(
+              title: Text("アカウント連携"),
+              onTap: () => {},
+            ),
+            ListTile(
+              title: Text("ログアウト"),
+              onTap: () => {},
+            ),
+          ],
+        ),
       ),
     );
   }

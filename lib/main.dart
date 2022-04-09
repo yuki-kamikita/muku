@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'model/firebase/authentication.dart';
-import 'ui/pages/bottom_navigation.dart';
+import 'ui/pages/top.dart';
 import 'ui/theme/lib_color_schemes.g.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,16 +15,16 @@ void main() async{
   runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+final themeModeProvider = StateProvider((ref) => ThemeMode.light);
 
 /// Themeの定義だけ
+class MyApp extends HookConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
-      // title: 'Muku',
-      themeMode: ThemeMode.dark, // ユーザー設定でここの値を変更できるようにすればいいな
+      themeMode: ref.watch(themeModeProvider), // ユーザー設定でここの値を変更できるようにすればいいな
       theme: ThemeData(
           useMaterial3: true,
           colorScheme: lightColorScheme,
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
             ThemeData(brightness: Brightness.dark).textTheme,
           )
       ), // https://itome.team/blog/2019/12/flutter-advent-calendar-day12/
-      home: const BottomNavigation(),
+      home: const Top(),
     );
   }
 }
