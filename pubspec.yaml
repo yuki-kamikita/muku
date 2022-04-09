@@ -35,6 +35,7 @@ dependencies:
   # 日本語フォント
   flutter_localizations:
     sdk: flutter
+  google_fonts: ^2.3.1
 
   # その他
   uuid: ^3.0.4
@@ -46,5 +47,19 @@ dev_dependencies:
   flutter_lints: ^1.0.0
 
 flutter:
+#  assets:
+#    - images/ # imagesフォルダの画像を読み取れるようにする
 
   uses-material-design: true
+
+  # アイコン
+  # 以下のコマンドを実行して配置
+  # `flutter pub pub run flutter_launcher_icons:main`
+#  flutter_icons:
+#    android: true
+#    ios: true
+#    image_path: "lib/assets/icon_home_android.png"
+  #  image_path_ios: 'lib/assets/icon_home_ios.png' # TODO: ios用は 背景付き マージン付き で別途作成
+  #  image_path_android: 'lib/assets/icon_home_android.png'
+  #  adaptive_icon_foreground: "lib/assets/icon_home_android.png"
+  #  adaptive_icon_background: "lib/assets/white.png"

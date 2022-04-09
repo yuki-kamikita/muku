@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'model/firebase/authentication.dart';
 import 'ui/pages/bottom_navigation.dart';
 import 'ui/theme/lib_color_schemes.g.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // main関数を非同期にして、Firebaseのinitializeが完了したら画面を描画する
 // initialize完了したら画面再描画、にしたい
@@ -15,6 +16,8 @@ void main() async{
 }
 
 class MyApp extends StatelessWidget {
+
+/// Themeの定義だけ
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -25,10 +28,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           useMaterial3: true,
           colorScheme: lightColorScheme,
+          textTheme: GoogleFonts.yomogiTextTheme(
+            Theme.of(context).textTheme,
+          )
       ),
       darkTheme: ThemeData(
           useMaterial3: true,
           colorScheme: darkColorScheme,
+          textTheme: GoogleFonts.yomogiTextTheme(
+            ThemeData(brightness: Brightness.dark).textTheme,
+          )
       ), // https://itome.team/blog/2019/12/flutter-advent-calendar-day12/
       home: const BottomNavigation(),
     );
