@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-/// 戦闘結果
-class BattleArchive extends HookConsumerWidget {
-  const BattleArchive({Key? key}) : super(key: key);
+/// 行先選択
+class Destination extends HookConsumerWidget {
+  const Destination({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
     return Scaffold(
-      appBar: AppBar(title: const Text("戦闘結果")),
+      appBar: AppBar(title: const Text("行先")),
       body: Center(
-        child: Text("戦闘結果"),
+        child: Text("どこにいく？"),
       ),
     );
   }
