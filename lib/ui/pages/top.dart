@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:muku/main.dart';
 import 'package:muku/ui/pages/battle_archive.dart';
 import 'package:muku/ui/pages/my_profile.dart';
 import 'package:muku/ui/pages/next_action.dart';
-import 'package:muku/ui/pages/settings/theme_selecter.dart';
+import 'package:muku/ui/pages/settings/theme_selector.dart';
 import 'package:muku/ui/pages/user_search.dart';
 
 /// ボトムナビゲーションとドロワー
@@ -56,21 +55,32 @@ class Top extends HookConsumerWidget {
           children: <Widget>[
             DrawerHeader(
               child: Text('Muku Project'),
-              // decoration: BoxDecoration(
-              // ),
             ),
             ListTile(
               title: Text("テーマ切り替え"),
               onTap: () => {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ThemeSelecter()),
+                  MaterialPageRoute(builder: (context) => const ThemeSelector()),
                 ),
               },
             ),
+            Divider(),
             ListTile(
               title: Text("プライバシーポリシー"),
               onTap: () => {},
+            ),
+            ListTile(
+              title: Text("このアプリについて"),
+              onTap: () => {
+                showAboutDialog(
+                  context: context,
+                  applicationIcon: const Icon(LineIcons.code), // とりあえず
+                  applicationName: "ムク",
+                  applicationVersion: "0.0.0",
+                  applicationLegalese: "よしなにして",
+                ),
+              },
             ),
             Divider(),
             ListTile(

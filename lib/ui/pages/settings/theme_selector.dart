@@ -4,8 +4,8 @@ import 'package:line_icons/line_icons.dart';
 import 'package:muku/main.dart';
 
 /// テーマ切り替え
-class ThemeSelecter extends HookConsumerWidget {
-  const ThemeSelecter({Key? key}) : super(key: key);
+class ThemeSelector extends HookConsumerWidget {
+  const ThemeSelector({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
