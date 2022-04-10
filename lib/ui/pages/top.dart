@@ -8,7 +8,7 @@ import 'package:muku/ui/pages/next_action.dart';
 import 'package:muku/ui/pages/settings/theme_selector.dart';
 import 'package:muku/ui/pages/user_search.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+// import 'package:webview_flutter/webview_flutter.dart';
 
 /// ボトムナビゲーションとドロワー
 class Top extends HookConsumerWidget {
@@ -51,6 +51,7 @@ class Top extends HookConsumerWidget {
         type: BottomNavigationBarType.fixed,
         onTap: (int index) => _bottomNavigationIndex.value = index
       ),
+
       drawerEdgeDragWidth: MediaQuery.of(context).size.width,
       drawer: Drawer(
         child: ListView(
@@ -59,6 +60,9 @@ class Top extends HookConsumerWidget {
               child: Text('Muku Project'),
             ),
             ListTile(
+              leading: ConstrainedBox(
+                  constraints: const BoxConstraints.expand(width: 0.0),
+                  child: const Icon(LineIcons.moon)),
               title: const Text("テーマ切り替え"),
               onTap: () => {
                 Navigator.push(
@@ -68,34 +72,55 @@ class Top extends HookConsumerWidget {
               },
             ),
             ListTile(
+              leading: ConstrainedBox(
+                  constraints: const BoxConstraints.expand(width: 0.0),
+                  child: const Icon(LineIcons.gamepad)),
               title: const Text("ゲームシステム"),
               onTap: () => {},
             ),
             ListTile(
+              leading: ConstrainedBox(
+                constraints: const BoxConstraints.expand(width: 0.0),
+                child: const Icon(LineIcons.twitter)),
               title: const Text("開発者Twitter"),
               onTap: () => {
                 launch("https://twitter.com/yuki_kamikita")
               },
             ),
             ListTile(
-              title: const Text("公式Discore"),
+              leading: ConstrainedBox(
+                  constraints: const BoxConstraints.expand(width: 0.0),
+                  child: const Icon(LineIcons.discord)),
+              title: const Text("公式Discord"),
               onTap: () => {},
             ),
             const Divider(),
             ListTile(
+              leading: ConstrainedBox(
+                  constraints: const BoxConstraints.expand(width: 0.0),
+                  child: const Icon(Icons.login)),
               title: const Text("アカウント連携"),
               onTap: () => {},
             ),
             ListTile(
+              leading: ConstrainedBox(
+                  constraints: const BoxConstraints.expand(width: 0.0),
+                  child: const Icon(Icons.logout)),
               title: const Text("ログアウト"),
               onTap: () => {},
             ),
             const Divider(),
             ListTile(
+              leading: ConstrainedBox(
+                  constraints: const BoxConstraints.expand(width: 0.0),
+                  child: const Icon(LineIcons.userShield)),
               title: const Text("利用規約"),
               onTap: () => {},
             ),
             ListTile(
+              leading: ConstrainedBox(
+                  constraints: const BoxConstraints.expand(width: 0.0),
+                  child: const Icon(LineIcons.userLock)),
               title: const Text("プライバシーポリシー"),
               onTap: () => {
                 // WebViewは画面作らないといけないらしくてだるいので一旦後回し
@@ -106,6 +131,9 @@ class Top extends HookConsumerWidget {
               },
             ),
             ListTile(
+              leading: ConstrainedBox(
+                  constraints: const BoxConstraints.expand(width: 0.0),
+                  child: const Icon(LineIcons.code)),
               title: const Text("このアプリについて"),
               onTap: () => {
                 showAboutDialog(
@@ -113,14 +141,17 @@ class Top extends HookConsumerWidget {
                   applicationIcon: const Icon(LineIcons.code), // とりあえず
                   applicationName: "ムク",
                   applicationVersion: "0.0.0",
-                  applicationLegalese: "よしなにして",
+                  applicationLegalese: "https://github.com/yuki-kamikita/muku",
                 ),
               },
             ),
             ListTile(
+              leading: ConstrainedBox(
+                  constraints: const BoxConstraints.expand(width: 0.0),
+                  child: const Icon(LineIcons.users)),
               title: const Text("開発者募集"),
               onTap: () => {
-                launch('https://akaiyukiusagi.com/')
+                launch('https://github.com/yuki-kamikita/muku')
               },
             ),
           ],
