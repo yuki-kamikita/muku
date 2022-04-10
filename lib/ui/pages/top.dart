@@ -7,6 +7,8 @@ import 'package:muku/ui/pages/my_profile.dart';
 import 'package:muku/ui/pages/next_action.dart';
 import 'package:muku/ui/pages/settings/theme_selector.dart';
 import 'package:muku/ui/pages/user_search.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 /// ボトムナビゲーションとドロワー
 class Top extends HookConsumerWidget {
@@ -53,11 +55,11 @@ class Top extends HookConsumerWidget {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            DrawerHeader(
+            const DrawerHeader(
               child: Text('Muku Project'),
             ),
             ListTile(
-              title: Text("テーマ切り替え"),
+              title: const Text("テーマ切り替え"),
               onTap: () => {
                 Navigator.push(
                   context,
@@ -65,13 +67,46 @@ class Top extends HookConsumerWidget {
                 ),
               },
             ),
-            Divider(),
             ListTile(
-              title: Text("プライバシーポリシー"),
+              title: const Text("ゲームシステム"),
               onTap: () => {},
             ),
             ListTile(
-              title: Text("このアプリについて"),
+              title: const Text("開発者Twitter"),
+              onTap: () => {
+                launch("https://twitter.com/yuki_kamikita")
+              },
+            ),
+            ListTile(
+              title: const Text("公式Discore"),
+              onTap: () => {},
+            ),
+            const Divider(),
+            ListTile(
+              title: const Text("アカウント連携"),
+              onTap: () => {},
+            ),
+            ListTile(
+              title: const Text("ログアウト"),
+              onTap: () => {},
+            ),
+            const Divider(),
+            ListTile(
+              title: const Text("利用規約"),
+              onTap: () => {},
+            ),
+            ListTile(
+              title: const Text("プライバシーポリシー"),
+              onTap: () => {
+                // WebViewは画面作らないといけないらしくてだるいので一旦後回し
+                // const WebView(
+                //   initialUrl: 'https://github.com/yuki-kamikita/muku/wiki/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC',
+                // )
+                launch("https://github.com/yuki-kamikita/muku/wiki/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC")
+              },
+            ),
+            ListTile(
+              title: const Text("このアプリについて"),
               onTap: () => {
                 showAboutDialog(
                   context: context,
@@ -82,14 +117,11 @@ class Top extends HookConsumerWidget {
                 ),
               },
             ),
-            Divider(),
             ListTile(
-              title: Text("アカウント連携"),
-              onTap: () => {},
-            ),
-            ListTile(
-              title: Text("ログアウト"),
-              onTap: () => {},
+              title: const Text("開発者募集"),
+              onTap: () => {
+                launch('https://akaiyukiusagi.com/')
+              },
             ),
           ],
         ),

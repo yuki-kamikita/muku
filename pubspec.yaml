@@ -10,8 +10,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
-
   # Firebase
   firebase_core: ^1.13.1
   firebase_auth: ^3.3.11
@@ -30,12 +28,17 @@ dependencies:
   hooks_riverpod: ^1.0.0
 
   # アイコン
+  cupertino_icons: ^1.0.2
   line_icons: ^2.0.1
 
   # 日本語フォント
   flutter_localizations:
     sdk: flutter
   google_fonts: ^2.3.1
+
+  # Webページを開く
+  url_launcher: ^6.0.20 # 別ブラウザ
+#  webview_flutter: ^3.0.2 # アプリ内
 
   # その他
   uuid: ^3.0.4
