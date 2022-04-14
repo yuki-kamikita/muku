@@ -27,18 +27,16 @@ dependencies:
   flutter_hooks: ^0.18.0
   hooks_riverpod: ^1.0.0
 
-  # アイコン
-  cupertino_icons: ^1.0.2
-  line_icons: ^2.0.1
+  # 便利ウィジェット
+  cupertino_icons: ^1.0.2 # 標準アイコン？
+  line_icons: ^2.0.1      # 線形アイコン
+  url_launcher: ^6.0.20   # 別ブラウザでWebページを開く
+  flutter_sticky_header: ^0.6.1 # スティッキー
 
   # 日本語フォント
   flutter_localizations:
     sdk: flutter
   google_fonts: ^2.3.1
-
-  # Webページを開く
-  url_launcher: ^6.0.20 # 別ブラウザ
-#  webview_flutter: ^3.0.2 # アプリ内
 
   # その他
   uuid: ^3.0.4
@@ -50,8 +48,8 @@ dev_dependencies:
   flutter_lints: ^1.0.0
 
 flutter:
-#  assets:
-#    - images/ # imagesフォルダの画像を読み取れるようにする
+  assets:
+    - assets/images/ # imagesフォルダの画像を読み取れるようにする
 
   uses-material-design: true
 
