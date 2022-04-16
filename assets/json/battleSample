@@ -1,0 +1,89 @@
+{
+  "image": "assets/images/dream.jpg",
+  "characters": [
+    {
+      "name": "ゆき",
+      "side": 0
+    },
+    {
+      "name": "案山子",
+      "side": 1
+    }
+  ],
+  "results": [
+    {
+      "turn": 1,
+      "status": [
+        {
+          "characterId": 0,
+          "mhp": 100,
+          "hp": 100
+        },
+        {
+          "characterId": 1,
+          "mhp": 100,
+          "hp": 100
+        }
+      ],
+      "action": [
+        {
+          "characterId": 0,
+          "name": "攻撃",
+          "target": 1,
+          "text": "3ダメージ"
+        },
+        {
+          "characterId": 1,
+          "name": "ヒール",
+          "target": 1,
+          "text": "2回復"
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "status": [
+        {
+          "characterId": 0,
+          "mhp": 100,
+          "hp": 100
+        },
+        {
+          "characterId": 1,
+          "mhp": 100,
+          "hp": 99
+        }
+      ],
+      "action": [
+        {
+          "characterId": 0,
+          "name": "攻撃",
+          "target": 1,
+          "text": "3ダメージ"
+        },
+        {
+          "characterId": 1,
+          "name": "ヒール",
+          "target": 1,
+          "text": "2回復"
+        }
+      ]
+    },
+    {
+      "turn": 99,
+      "status": [
+        {
+          "characterId": 0,
+          "mhp": 100,
+          "hp": 100
+        },
+        {
+          "characterId": 1,
+          "mhp": 100,
+          "hp": 99
+        }
+      ]
+    }
+  ],
+  "status": 200
+}

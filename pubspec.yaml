@@ -50,6 +50,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/ # imagesフォルダの画像を読み取れるようにする
+    - assets/json/
 
   uses-material-design: true
 
