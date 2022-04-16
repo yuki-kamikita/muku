@@ -57,7 +57,7 @@ class BattleArchive extends HookConsumerWidget {
     return CustomScrollView(
       slivers: [
         SliverAppBar(
-          expandedHeight: 600,
+          expandedHeight: 500,
           // expandedHeight: MediaQuery.of(context).size.height,
           pinned: true,
           flexibleSpace: Image.asset(result['image'], fit: BoxFit.cover),
