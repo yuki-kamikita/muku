@@ -16,7 +16,8 @@ void main() async {
   runApp(const ProviderScope(child: MyApp()));
 }
 
-final themeModeProvider = StateProvider((ref) => ThemeMode.light);
+final themeModeProvider =
+    StateProvider((ref) => ThemeMode.light); // FIXME: なんでここ切り替えると一瞬クラッシュするの
 
 /// Themeの定義だけ
 class MyApp extends HookConsumerWidget {

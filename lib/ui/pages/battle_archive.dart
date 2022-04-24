@@ -14,12 +14,15 @@ class BattleArchive extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final _result = useFuture(_loadJson());
+    final _resultMemoized = useMemoized(() => _loadJson());
+    final _result = useFuture(_resultMemoized);
 
     return Scaffold(
       body: _result.hasData
-          ? _create(context, _result.data!)
-          : const CircularProgressIndicator(),
+          ? _onCreate(context, _result.data!)
+          : const Center(
+              child: CircularProgressIndicator(),
+            ),
     );
   }
 
@@ -53,7 +56,8 @@ class BattleArchive extends HookConsumerWidget {
     );
   }
 
-  CustomScrollView _create(BuildContext context, Map<String, dynamic> result) {
+  CustomScrollView _onCreate(
+      BuildContext context, Map<String, dynamic> result) {
     return CustomScrollView(
       slivers: [
         SliverAppBar(
@@ -130,14 +134,32 @@ class BattleArchive extends HookConsumerWidget {
     );
   }
 
-  Container _statusRow(
+  Column _statusRow(
       Map<String, dynamic> character, Map<String, dynamic> status) {
-    return Container(
-      width: double.infinity,
-      child: Text(
-        "${character['name']} ${status['hp']}/${status['mhp']}",
-        textAlign: (character['side'] == 0) ? TextAlign.left : TextAlign.right,
-      ),
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          child: Text(
+            "${character['name']} ${status['hp']}/${status['mhp']}",
+            textAlign:
+                (character['side'] == 0) ? TextAlign.left : TextAlign.right,
+          ),
+        ),
+        Align(
+          alignment: (character['side'] == 0)
+              ? Alignment.centerLeft
+              : Alignment.centerRight,
+          child: SizedBox(
+            width: status['mhp'], // とりあえずmhp置いてるけど、多分インフレするから最大値固定かな
+            child: LinearProgressIndicator(
+              value: status['hp'] / status['mhp'],
+              color: Colors.red,
+              backgroundColor: Colors.red[100],
+            ),
+          ),
+        ),
+      ],
     );
   }
 

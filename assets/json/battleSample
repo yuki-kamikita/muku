@@ -30,13 +30,13 @@
           "characterId": 0,
           "name": "攻撃",
           "target": 1,
-          "text": "3ダメージ"
+          "text": "70ダメージ"
         },
         {
           "characterId": 1,
           "name": "ヒール",
           "target": 1,
-          "text": "2回復"
+          "text": "20回復"
         }
       ]
     },
@@ -51,7 +51,7 @@
         {
           "characterId": 1,
           "mhp": 100,
-          "hp": 99
+          "hp": 50
         }
       ],
       "action": [
